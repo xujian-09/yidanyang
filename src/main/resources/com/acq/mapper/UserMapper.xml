@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 该mapper.xml映射文件的唯一标识符 -->
+<mapper namespace="com.acq.mapper.UserMapper">
+    <resultMap id="userMap" type="com.acq.pojo.User">
+        <id property="id" column="id" ></id>
+        <result property="userName" column="userName" ></result>
+        <result property="passWord" column="passWord" ></result>
+        <result property="email" column="email" ></result>
+        <result property="gender" column="gender" ></result>
+        <result property="flag" column="flag" ></result>
+        <result property="role" column="role" ></result>
+        <result property="code" column="code" ></result>
+    </resultMap>
+
+    <select id="queryUserById" resultMap="userMap" parameterType="int">
+        select id,userName,passWord,email,gender,flag,role,code from user  where id = #{id}
+    </select>
+
+
+</mapper>
