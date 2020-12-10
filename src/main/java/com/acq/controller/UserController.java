@@ -15,6 +15,6 @@ public class UserController {
     @RequestMapping("test")
     public void test(){
         System.out.println(userService.queryUserById(1));
-        System.out.println("helloWorld");
+
     }
 }
